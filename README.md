@@ -61,11 +61,11 @@ Follow these steps to use the project:
 
 ### Registration Request Flowchart
 
-![Registration Flow]()
+![Registration Flow](readme/protocol-reconnect.jpg)
 
 ### Reconnect Process Flowchart
 
-![Reconnect Flow]()
+![Reconnect Flow](readme/protocol-registration.jpg)
 
 ## Encryption
 
