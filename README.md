@@ -4,7 +4,7 @@ The Encrypted File Transfer System was developed to ensure secure transmission o
 
 This implementation includes a partially secure file transfer protocol intended for smaller file sizes. The server is written in Python 3.9, the client in C++11, and MySQL manages the database.
 
-For detailed project specifications in Hebrew, refer to the [project_specifications.pdf]().
+For detailed project specifications in Hebrew, refer to the [project_specifications.pdf](readme/projectSpec.pdf).
 
 This project was completed as the final submission for the course Defensive System Programming (20937) at the Open University of Israel.
 
