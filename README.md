@@ -58,3 +58,16 @@ Follow these steps to use the project:
 ### Error Handling
 - In the event of server errors, the client retries message transmission up to three times.
 - Unsuccessful attempts result in the client exiting with a detailed "Fatal" message.
+
+### Registration Request Flowchart
+
+![Registration Flow]()
+
+### Reconnect Process Flowchart
+
+![Reconnect Flow]()
+
+## Encryption
+
+- **Symmetric Encryption**: Uses CBC-AES with a 128-bit key length for file content encryption. Initialization Vectors (IVs) are zero-filled.
+- **Asymmetric Encryption**: RSA with a 1024-bit key length facilitates exchanging encryption keys between clients and the server.
