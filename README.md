@@ -71,3 +71,20 @@ Follow these steps to use the project:
 
 - **Symmetric Encryption**: Uses CBC-AES with a 128-bit key length for file content encryption. Initialization Vectors (IVs) are zero-filled.
 - **Asymmetric Encryption**: RSA with a 1024-bit key length facilitates exchanging encryption keys between clients and the server.
+
+
+## Payload Content
+
+The payload content varies depending on the type of request/response. Each payload has a different structure.
+you can see the Payload in the PDF [project_specifications.pdf](readme/projectSpec.pdf).
+
+## Vulnerabilities and Weaknesses
+
+| Vulnerability                   | Description                                                                                          | Solution                                                                                                                                                                                                                                                                 |
+|---------------------------------|------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Unauthorized Database Access    | SQL injections may grant unauthorized access. Additionally, concurrent user actions on the database could lead to potential corruption and data loss. | Robust input validation and sanitization techniques have been implemented to counter SQL injection vulnerabilities. Mutual exclusive protection has been set up to safeguard against data corruption from concurrent actions.            |
+| Directory Traversal Attack      | Toxic input might allow attackers to navigate server directories, potentially breaching sensitive information. | Mitigation involves strict input validation and sanitization processes, restricting user access to approved directories and files only.                                              |
+| Buffer/Integer Overflow         | Vulnerabilities in C++ code could lead to buffer and integer overflow issues, potentially resulting in system compromises. | C++ code segments now incorporate stringent bounds checking and data validation logic. Secure libraries and best practices have been enforced to eliminate overflow vulnerabilities, such as adopting safer data structures like `string` instead of `char*`.                        |
+| DDoS Attacks                    | Multiple requests from an attacker could lead to a server crash or system exhaustion, causing a significant disruption. | Mitigation strategies include limiting connections per IP and files per user. While these measures are basic, in a real scenario, services like Cloudflare would be integrated to protect against modern DDoS attacks.                    |
+| Impersonation                   | Risks of Man-in-the-Middle attacks, potentially compromising communication integrity. | Although a semi-TLS protocol is implemented, the UUID is initially available to an attacker, allowing potential interception. In a real scenario, encryption of the UUID would be performed to prevent such attacks, enhancing overall security. |
+| Server Crash                    | Deliberate attempts could crash the server, causing database corruption or complete system breakdown. | Vulnerabilities in server.py and server.db have been addressed to prevent crashes. Implementation of robust error handling and input validation has been crucial in avoiding system breakdown caused by unexpected inputs or situations.                                                                          |
